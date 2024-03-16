@@ -3,7 +3,7 @@ const A = [50,107, 'jack', 83, 'killer', 'son', true];
 // 1. Just show the strings in a new array.
 const result =A.filter(nam => typeof nam === 'string');
 console.log(result);
-// ans:[ 'jack', 'killer', 'son' ]
+// output:[ 'jack', 'killer', 'son' ]
 
 
 // 2. Create a new array from numbers and sort them.
@@ -13,31 +13,26 @@ function compareNumbers(a, b) {
   }
 result2.sort(compareNumbers);
 console.log(result2);
-//ans: [ 50, 83, 107 ] small to bigger number.
+//output: [ 50, 83, 107 ] small to bigger number.
 
 
 
 // 3. Make the string array reverse.['jack', 'killer','son']
 console.log(result.reverse());
-// ans:[ 'son', 'killer', 'jack' ]
+// output:[ 'son', 'killer', 'jack' ]
 
 
 // 4. Combine both array of numbers and strings.
 const result3 = result.concat(result2); 
 console.log(result3);
-// ans:[ 'jack', 'killer', 'son', 50, 83, 107 ]
+// output:[ 'jack', 'killer', 'son', 50, 83, 107 ]
 
 
 // 5. Delete 3 items from the 6th item from the combined array.
-result3.push('hello','world','bd');
-var i=result3.length;
-while (i--) {
-  if(i>=6){
-    result3.splice(i, 1);
-  }
-  }
-  console.log(result3);
-// ans: [ 'jack', 'killer', 'son', 50, 83, 107 ]
+result3.push('hello','world','bd','nice','country');
+result3.splice(6, 3);
+console.log(result3);
+// output: ['son',  'killer', 'jack', 50, 83, 107,'nice', 'country']
   
 
 //   6. Show elements from A which are less than 100.
@@ -47,5 +42,10 @@ while (i--) {
        // console.log(largest);
       }
   }
-// ans:50 83
-  
+// output:50 83
+
+
+// 7. From string array remove the last letter and add word 'str' before each of them
+console.log(result.map(item => item.slice(0, -1) + 'str'));
+
+// output:[ 'sostr', 'killestr', 'jacstr' ]
